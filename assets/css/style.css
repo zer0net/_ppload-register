@@ -1,0 +1,308 @@
+@import url('http://fonts.googleapis.com/css?family=Oswald:400,700');
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* MIXINS */
+/* /MIXINS */
+/* COLORS */
+/* /COLORS */
+* {
+  font-family: 'Oswald', sans-serif;
+}
+*:focus,
+*:hover {
+  outline: none !important;
+  text-decoration: none;
+}
+html {
+  background-color: #f7f7f7;
+}
+body {
+  background-color: #f7f7f7;
+  color: #333;
+}
+h1,
+h2,
+h3,
+h4 {
+  padding: 0;
+  margin: 0;
+}
+hr {
+  margin-top: 8px;
+  padding: 0;
+}
+button.md-button {
+  cursor: pointer;
+  -webkit-border-top-right-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -webkit-border-bottom-left-radius: 0;
+  -webkit-border-top-left-radius: 0;
+  -moz-border-radius-topright: 0;
+  -moz-border-radius-bottomright: 0;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-topleft: 0;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  -moz-background-clip: padding-box;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+}
+button.md-button label,
+button.md-button a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+  font-weight: normal;
+}
+videogular {
+  padding: 0 !important;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+videogular.full-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+}
+.main-content {
+  background-color: #f7f7f7;
+}
+.main-content md-content + md-content {
+  margin-top: 16px;
+}
+#my-channel-section {
+  margin-bottom: 16px;
+}
+#video-upload-section .video-upload-top {
+  height: 90px;
+}
+#video-upload-section form {
+  padding-left: 16px;
+}
+#video-upload-section canvas {
+  width: 100%;
+}
+#video-upload-section .tags-container {
+  padding-bottom: 16px;
+}
+#video-upload-section .tags-container .tag {
+  display: block;
+  padding: 5px 25px 5px 5px;
+  background: #337ab7;
+  float: left;
+  color: white;
+  position: relative;
+  margin-right: 8px;
+}
+#video-upload-section .tags-container .tag .glyphicon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 20px;
+  display: block;
+  text-align: center;
+  line-height: 30px;
+  background: white;
+  color: #337ab7;
+  cursor: pointer;
+}
+.header a {
+  color: white;
+}
+.header a:hover {
+  text-decoration: none;
+}
+.header h3 {
+  margin: 11px;
+  padding: 0;
+}
+.header .pull-right {
+  float: right;
+}
+section.container {
+  margin-top: 8px;
+}
+.sidebar-video-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.sidebar-video-list li {
+  width: 100%;
+  float: left;
+}
+.sidebar-video-list li figure {
+  width: 35%;
+  height: auto;
+  float: left;
+}
+.sidebar-video-list li figure img {
+  width: 100%;
+  height: auto;
+}
+.sidebar-video-list li div.video-info {
+  float: left;
+  width: 65%;
+  padding: 0 12px;
+}
+.sidebar-video-list li div.video-info h4,
+.sidebar-video-list li div.video-info span {
+  display: block;
+  float: left;
+  width: 100%;
+}
+.sidebar-video-list li div.video-info h4 {
+  font-size: 14px;
+  margin: 0;
+  margin-bottom: 4px;
+  padding: 0;
+}
+.sidebar-video-list li div.video-info span {
+  font-size: 12px;
+}
+.sidebar-video-list li + li {
+  margin-top: 8px;
+}
+/** SECTIONS **/
+.section {
+  padding: 12px;
+}
+#my-channel-section .section-title,
+#my-channel-section .section-body,
+#my-channel-section hr {
+  float: left;
+  width: 100%;
+}
+#my-channel-section .section-title h2 {
+  float: left;
+  margin-right: 8px;
+}
+#my-channel-section .section-title a {
+  margin: 8px 0 0 0;
+  float: right;
+  cursor: pointer;
+}
+#my-channel-section .section-body figure img {
+  width: 100%;
+}
+#my-channel-section .section-body figure button {
+  width: 100%;
+  height: auto;
+  position: relative;
+  border: 0;
+  padding: 0;
+  min-height: 120px;
+  margin-bottom: 20px;
+}
+#my-channel-section .section-body figure button img {
+  width: 100%;
+  height: auto;
+}
+#my-channel-section .section-body figure button p {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+}
+#my-channel-section .section-body .channel-info {
+  padding: 0 8px;
+}
+#my-channel-section .section-body .channel-info article {
+  padding: 0;
+}
+#my-channel-section .section-body .channel-info md-input-container {
+  padding: 0;
+}
+#videos-section .video-list-item .inner-wrap {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 70px;
+}
+#videos-section .video-list-item .video-img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  position: relative;
+}
+#videos-section .video-list-item .video-img .glyphicon {
+  margin: 4px;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 4px;
+  color: white;
+}
+#videos-section .video-list-item .video-img .glyphicon:hover {
+  color: #337ab7;
+}
+#videos-section .video-list-item .video-img .video-time {
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: block;
+  padding: 2px 4px;
+  width: auto;
+  float: left;
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  font-size: 13px;
+}
+#videos-section .video-list-item md-grid-tile-footer {
+  height: 70px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  color: #333;
+}
+#videos-section .video-list-item md-grid-tile-footer h3,
+#videos-section .video-list-item md-grid-tile-footer span {
+  display: block;
+  float: left;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+#videos-section .video-list-item md-grid-tile-footer h3 {
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+#videos-section .video-list-item md-grid-tile-footer span {
+  font-size: 13px;
+  line-height: 14px;
+}
+#videos-section .video-list-item md-grid-tile-footer i {
+  font-style: normal;
+}
+#comments-section ul {
+  padding: 0;
+  margin: 0;
+}
+#comments-section ul li {
+  margin-top: 8px;
+}
+#comments-section ul li span.user-name {
+  color: #337ab7;
+}
+#comments-section ul li span.time-ago {
+  font-size: 12px;
+}
+#comments-section ul li + li {
+  margin-top: 12px;
+}

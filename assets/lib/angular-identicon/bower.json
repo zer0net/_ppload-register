@@ -1,0 +1,27 @@
+{
+  "name": "angular-identicon",
+  "version": "0.1.18",
+  "homepage": "https://github.com/kether667/angular-identicon",
+  "authors": [
+    "kether667 <lkarolewski@gmail.com>"
+  ],
+  "description": "angular wrapper for github like identicons",
+  "main": "dist/angular-identicon.js",
+  "dependencies": {
+    "identicon": "*"
+  },
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "identicon",
+    "angular"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "gulpfile.js"
+  ]
+}
