@@ -4,6 +4,7 @@ angular.module('ZeroVidzUser').controller('MainCtrl', ['$scope','$sce','$locatio
 		$scope.init = function(){
 			$scope.onOpenWebSocket();
 			$scope.getChannels();
+			$scope.channel = {};
 		};
 
 		// on open web socket
@@ -17,7 +18,6 @@ angular.module('ZeroVidzUser').controller('MainCtrl', ['$scope','$sce','$locatio
 						} else {
 							$scope.selectUser();
 						}
-						console.log(site_info);
 						$scope.page = Page;
 					});
 					return _this.site_info = site_info;
@@ -40,22 +40,24 @@ angular.module('ZeroVidzUser').controller('MainCtrl', ['$scope','$sce','$locatio
 			});
 	    };
 
-	    // Add Channel
-	    $scope.getChannel = function(channelId) {
-			$.getJSON('/'+channelId+'/data/channel.json',function(channel){
+
+	    // show Channel
+	    $scope.showChannel = function(channelId) {
+			$.getJSON('/'+channelId+'/data/channel.json',function(data){
 				$scope.$apply(function() {
-					$scope.channel = channel.channel;
-					$scope.getVideos($scope.channel,channelId);
+					$scope.channel = data.channel;
+					$scope.videos = data.videos;
+					console.log(data);
 				});
 			});
 	    };
 
-	    // get videos
-	    $scope.getVideos = function(channel,channelId) {
-	    	console.log(channelId);
-			$.getJSON('/'+channelId+'/data/videos.json',function(videos){
+	    // Add Channel
+	    $scope.getChannel = function(channelId,channel) {
+			$.getJSON('/'+channelId+'/data/channel.json',function(data){
 				$scope.$apply(function() {
-					channel.videos = videos.videos;
+					channel.videos = data.videos;
+					console.log(data);
 				});
 			});
 	    };
