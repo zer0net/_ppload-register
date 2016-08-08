@@ -1,0 +1,52 @@
+{
+	"channels": [
+		{
+			"channel_id": "1CRFBc4Tn8vvYdNBQCLRbuRwLZkNaHY8kz",
+			"videos": [
+				{
+					"channel_id": "1CRFBc4Tn8vvYdNBQCLRbuRwLZkNaHY8kz",
+					"video_id": 12,
+					"title": "asdasdsadsa",
+					"file_name": "asd.webm",
+					"file_type": "video/webm"
+				}
+			]
+		},
+		{
+			"channel_id": "1NLbQ67LyDHo4VVGS3TAhm7K5ciEFvzuRf",
+			"videos": [
+				{
+					"channel_id": "1NLbQ67LyDHo4VVGS3TAhm7K5ciEFvzuRf",
+					"video_id": 7,
+					"title": "asdsad",
+					"file_name": "sdadsadsasads.mp4",
+					"file_type": "video/mp4"
+				}
+			]
+		},
+		{
+			"channel_id": "1CRFBc4Tn8vvYdNBQCLRbuRwLZkNaHY8kz",
+			"videos": [
+				{
+					"channel_id": "1CRFBc4Tn8vvYdNBQCLRbuRwLZkNaHY8kz",
+					"video_id": 12,
+					"title": "asdasdsadsa",
+					"file_name": "asd.webm",
+					"file_type": "video/webm"
+				}
+			]
+		},
+		{
+			"channel_id": "1NLbQ67LyDHo4VVGS3TAhm7K5ciEFvzuRf",
+			"videos": [
+				{
+					"channel_id": "1NLbQ67LyDHo4VVGS3TAhm7K5ciEFvzuRf",
+					"video_id": 7,
+					"title": "asdsad",
+					"file_name": "sdadsadsasads.mp4",
+					"file_type": "video/mp4"
+				}
+			]
+		}
+	]
+}

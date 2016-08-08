@@ -1,0 +1,18 @@
+{
+	"channels": [
+		{
+			"channel_id": "1P6YGzzZHUQosHy5QAdaxZSAAfDHaYPCKB",
+			"user_id": "davidnelband@zeroid.bit",
+			"videos": [
+				{
+					"channel_id": "1P6YGzzZHUQosHy5QAdaxZSAAfDHaYPCKB",
+					"video_id": 1,
+					"title": "another owl video",
+					"file_name": "sdsdsowls.mp4",
+					"file_type": "video/mp4"
+				}
+			],
+			"date_added": 1470664884298
+		}
+	]
+}

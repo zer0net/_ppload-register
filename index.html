@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html ng-app="ZeroVidzUser" lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="ZeroVidzReg" lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
-	<title>ZeroVidz Central</title>
+	<title>ZeroVidz Register Site</title>
 
 	<!-- CSS -->
 		<!-- lib -->
@@ -25,13 +25,8 @@
 
 	<md-toolbar layout-padding class="md-hue-1 header" layout="row">
 		<div class="pull-left col-xs-10">
-		<h3><a href="/{{site_address}}">ZeroVidz Central</a></h3>
+		<h3><a href="/{{site_address}}">ZeroVidz Register Site</a></h3>
 		</div>
-		<div class="pull-right col-xs-2">
-        <!--<md-button class="md-hue-2 md-primary md-raised edgePadding">
-        	<a href="/{{site_address}}/upload.html">Upload</a>
-        </md-button>-->
-        </div>
 	</md-toolbar>
 
 	<section layout="column"  class="container">
@@ -45,82 +40,85 @@
 		</md-content>
 		<!-- /channel input -->
 
-		<!-- channel info -->
-		<md-content ng-show="channel" flex class="section md-whiteframe-1dp" layout="row" layout-padding>
- 			<div layout="row" flex>
-	 			<figure flex="20">
-	 				<img class="md-whiteframe-1dp" style="width:100%;" ng-src="/{{channel_id}}/uploads/images/{{channel.img}}"/>
-	 			</figure>
-	 			<div class="channel-info" flex="80" layout-padding>
-	 				<h2>{{channel.name}}</h2>
-	 				<article ng-bind="channel.description"></article>
-	 			</div>
- 			</div>
-		</md-content>
-		<!-- channel info -->
-
-	    <md-content flex class="md-whiteframe-1dp section">
-				<md-button class="md-hue-2 md-primary md-raised edgePadding" ng-click="addChannel(channel_id)">
-					Add Channel
-				</md-button>
-	    </md-content>
-
-	    <!-- channel videos section -->
-	    <md-content id="videos-section" ng-show="videos" class="md-whiteframe-1dp section">
-	    	<h2>Videos</h2>
-	    	<hr/>
-			<md-grid-list
-		        md-cols-xs="1" md-cols-sm="3" md-cols-md="4" md-cols-gt-md="5" md-row-height="4:3"
-		        md-gutter="12px" md-gutter-gt-sm="8px" >
-				<md-grid-tile ng-repeat="video in videos" ng-init="renderVideo(video)" class="video-list-item">
-					<div class="inner-wrap">
-						<div class="video-img">
-	 						<img class="md-whiteframe-1dp" style="width:100%;" ng-src="/{{channel_id}}/{{video.imgSrc}}"/>
-	               			<span ng-click="deleteVideo(video)" class="glyphicon glyphicon-trash"></span>
-							<span class="video-time">{{video.total_time | date:"mm:ss"}}</span>
-						</div>
-						<md-grid-tile-footer>
-		    				<h3><a href="/{{channel_id}}/video.html?w={{video.video_id}}">{{video.title}}</a></h3>
-		    				<span>{{video.user_id}}</span>
-		    				<span>{{video.views}} views • <i am-time-ago="video.date_added"></i></span>
-						</md-grid-tile-footer>
-					</div>
-				</md-grid-tile>
-		    </md-grid-list>
-
-		    <a ng-show="message" href="upload.html">{{message}}</a>
-
-	    </md-content>
-	    <!-- / videos section -->
-
 	    <hr/>
 
-	    <!-- channels section -->
-	    <md-content id="videos-section" ng-repeat="channel in channels" ng-init="getChannel(channel.channel_id,channel)" class="md-whiteframe-1dp section">
-	    	<h2>{{channel.name}}</h2>
-	    	<hr/>
-			<md-grid-list
-		        md-cols-xs="1" md-cols-sm="3" md-cols-md="4" md-cols-gt-md="5" md-row-height="4:3"
-		        md-gutter="12px" md-gutter-gt-sm="8px" >
-				<md-grid-tile ng-repeat="video in channel.videos" ng-init="renderVideo(video)" class="video-list-item">
-				<div class="inner-wrap">
-					<div class="video-img">
- 						<img class="md-whiteframe-1dp" style="width:100%;" ng-src="/{{channel.channel_id}}/{{video.imgSrc}}"/>
-						<span class="video-time">{{video.total_time | date:"mm:ss"}}</span>
-					</div>
-					<md-grid-tile-footer>
-	    				<h3><a href="/{{channel.channel_id}}/video.html?w={{video.video_id}}">{{video.title}}</a></h3>
-	    				<span>{{video.user_id}}</span>
-	    				<span>{{video.views}} views • <i am-time-ago="video.date_added"></i></span>
-					</md-grid-tile-footer>
-				</div>
-				</md-grid-tile>
-		    </md-grid-list>
+		<!-- chnnels -->
+		<div layout="row" ng-show="loading"  layout-sm="column" layout-align="space-around">
+			<md-progress-circular md-mode="indeterminate"></md-progress-circular>
+		</div>
+		<div ng-hide="loading">
+			channels:
+			<ul><li ng-repeat="channel in channels">
+				channel id: {{channel.channel_id}}<br/>
+				<!--<a ng-if="channel.user_id === user" ng-click="deleteChannel(channel)"> - delete</a>-->
+			</li></ul>
+		</div>
+		<!-- /channels -->
 
-		    <a ng-show="message" href="upload.html">{{message}}</a>
+		<hr/>
 
-	    </md-content>
-	    <!-- / videos section -->
+		<!-- /channel -->
+		<section ng-if="channel">
+
+			<!-- info -->
+			<md-content ng-show="channel" flex class="section md-whiteframe-1dp" layout="row" layout-padding>
+	 			<div layout="row" flex>
+		 			<figure flex="20">
+		 				<img class="md-whiteframe-1dp" style="width:100%;" ng-src="/{{channel_id}}/uploads/images/{{channel.img}}"/>
+		 			</figure>
+		 			<div class="channel-info" flex="80" layout-padding>
+		 				<h2>{{channel.name}}</h2>
+		 				<article ng-bind="channel.description"></article>
+		 			</div>
+	 			</div>
+			</md-content>
+			<!-- /info -->
+
+		    <hr/>
+
+		    <!-- videos -->
+		    <md-content id="videos-section" ng-show="videos" class="md-whiteframe-1dp section">
+		    	<h2>Videos</h2>
+		    	<hr/>
+				<md-grid-list
+			        md-cols-xs="1" md-cols-sm="3" md-cols-md="4" md-cols-gt-md="5" md-row-height="4:3"
+			        md-gutter="12px" md-gutter-gt-sm="8px" >
+					<md-grid-tile ng-repeat="video in videos" ng-init="renderVideo(video)" class="video-list-item">
+						<div class="inner-wrap">
+							<div class="video-img">
+		 						<a href="/{{channel_id}}/video.html?w={{video.video_id}}">
+		 							<img class="md-whiteframe-1dp" style="width:100%;" ng-src="/{{channel_id}}/{{video.imgSrc}}"/>
+		               			<span ng-click="deleteVideo(video)" class="glyphicon glyphicon-trash"></span>
+								<span class="video-time">{{video.total_time | date:"mm:ss"}}</span>
+								</a>
+							</div>
+							<md-grid-tile-footer>
+			    				<h3><a href="/{{channel_id}}/video.html?w={{video.video_id}}">{{video.title}}</a></h3>
+			    				<span>{{video.user_id}}</span>
+			    				<span><!--{{video.views}} views •--> <i am-time-ago="video.date_added"></i></span>
+							</md-grid-tile-footer>
+						</div>
+					</md-grid-tile>
+			    </md-grid-list>
+
+			    <a ng-show="message" href="upload.html">{{message}}</a>
+
+		    </md-content>
+		    <!-- /videos -->
+
+		    <hr/>
+
+		    <md-content flex class="md-whiteframe-1dp section">
+					<md-button class="md-hue-2 md-primary md-raised edgePadding pull-right" ng-click="addChannel(channel_id,channel)">
+						Add Channel
+					</md-button>
+		    </md-content>
+
+		    <hr/>
+
+	    </section>
+	    <!-- /channel -->
+	
 
 	</section>
 
@@ -134,18 +132,8 @@
 	    <script type="text/javascript" src="assets/lib/angular/angular-aria.min.js"></script>
 		<script type="text/javascript" src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>
 		<script type="text/javascript" src="assets/lib/angular-material/angular-material.min.js"></script>
-		<script type="text/javascript" src="assets/lib/angular-sanitize/angular-sanitize.min.js"></script>
-		<script type="text/javascript" src="assets/lib/videogular/videogular.js"></script>
-		<script type="text/javascript" src="assets/lib/videogular-controls/vg-controls.js"></script>
-		<script type="text/javascript" src="assets/lib/videogular-overlay-play/vg-overlay-play.js"></script>
-		<script type="text/javascript" src="assets/lib/videogular-poster/vg-poster.js"></script>
-		<script type="text/javascript" src="assets/lib/videogular-buffering/vg-buffering.js"></script>
-		<script type="text/javascript" src="assets/lib/dropzone/dropzone.js"></script>
 		<script type="text/javascript" src="assets/lib/moment/moment.js"></script>
 		<script type="text/javascript" src="assets/lib/angular-moment/angular-moment.min.js"></script>
-	    <script type="text/javascript" src="assets/lib/identicon/pnglib.js"></script>
-	    <script type="text/javascript" src="assets/lib/identicon/identicon.js"></script>
-	    <script type="text/javascript" src="assets/lib/angular-identicon/dist/angular-identicon.min.js"></script>
     
 		<!-- zeronet -->
 		<script type="text/javascript" src="assets/lib/zeronet/ZeroFrame.js"></script>

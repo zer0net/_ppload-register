@@ -1,0 +1,17 @@
+{
+	"channels": [
+		{
+			"channel_id": "1AW1mtsu7aWpiEMX4cEfabe3EfuHvggFFg",
+			"videos": [
+				{
+					"channel_id": "1AW1mtsu7aWpiEMX4cEfabe3EfuHvggFFg",
+					"video_id": 1,
+					"title": "another owl video",
+					"file_name": "sdsdsowls.mp4",
+					"file_type": "video/mp4"
+				}
+			],
+			"date_added": 1470665016404
+		}
+	]
+}

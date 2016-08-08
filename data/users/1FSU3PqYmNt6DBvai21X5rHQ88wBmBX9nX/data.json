@@ -1,0 +1,18 @@
+{
+	"channels": [
+		{
+			"channel_id": "1CuaX8spcXzDEGZJr65T8pox9SeMpMcCqw",
+			"user_id": "mvittoria@zeroid.bit",
+			"videos": [
+				{
+					"channel_id": "1CuaX8spcXzDEGZJr65T8pox9SeMpMcCqw",
+					"video_id": 13,
+					"title": "asfasfsa",
+					"file_name": "asd.webm",
+					"file_type": "video/webm"
+				}
+			],
+			"date_added": 1470663348760
+		}
+	]
+}

@@ -1,4 +1,4 @@
-angular.module('ZeroVidzUser').directive('channelInput', ['$parse', function ($parse) {
+angular.module('ZeroVidzReg').directive('channelInput', ['$parse', function ($parse) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
